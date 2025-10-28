@@ -1,10 +1,6 @@
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from '../generated/prisma/client.js';
 
-const prisma = global.prisma || new PrismaClient();
-
-if (process.env.NODE_ENV !== 'production') {
-  global.prisma = prisma;
-}
+const prisma = new PrismaClient();
 
 export async function findAll() {
   return prisma.task.findMany();
