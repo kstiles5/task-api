@@ -1,13 +1,15 @@
-import * as taskRepo from '../repositories/taskRepo.js';
+import * as taskRepository from '../repositories/taskRepo.js';
 
 export async function getAllTasks() {
-  return taskRepo.findAll();
+  return taskRepository.findAll();
 }
 
 export async function createTask(newTask) {
-  return taskRepo.create(newTask);
+  return taskRepository.create(newTask);
 }
 
-export async function getTaskById(id) {
-  return taskRepo.findTaskById(id);
-}
+const taskRepo = require('../repositories/taskRepo');
+
+exports.getTaskById = async (id) => {
+  return await taskRepo.findTaskById(id);
+};

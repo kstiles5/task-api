@@ -4,14 +4,18 @@ export async function findAll() {
   return prisma.task.findMany();
 }
 
-export async function findTaskById(id) {
-  return prisma.task.findUnique({
-    where: { id },
-  });
-}
-
+// Create a new task
 export async function create(data) {
   return prisma.task.create({
     data,
   });
 }
+
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
+
+exports.findTaskById = async (id) => {
+  return await prisma.task.findUnique({
+    where: { id },
+  });
+};

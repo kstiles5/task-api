@@ -9,4 +9,3 @@ router.post('/', validateTask, taskController.createTask);
 router.get('/:id', taskController.getTaskById);
 
 export default router;
-

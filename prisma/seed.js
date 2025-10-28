@@ -1,4 +1,4 @@
-import prisma from './src/config/db.js'; // Remove one level of ../
+import prisma from '../src/config/db.js';
 
 async function main() {
   // Clear the tasks table and reset ID sequence
