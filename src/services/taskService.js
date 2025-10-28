@@ -7,3 +7,10 @@ export async function getAllTasks() {
 export async function createTask(newTask) {
   return taskRepository.create(newTask);
 }
+
+const taskRepo = require('../repositories/taskRepo');
+
+exports.getTaskById = async (id) => {
+  return await taskRepo.findTaskById(id);
+};
+

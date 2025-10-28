@@ -10,3 +10,13 @@ export async function create(data) {
     data,
   });
 }
+
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
+
+exports.findTaskById = async (id) => {
+  return await prisma.task.findUnique({
+    where: { id },
+  });
+};
+
