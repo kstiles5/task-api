@@ -22,11 +22,13 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
-    "@prisma/client": "^6.16.2",
+    "@prisma/client": "^6.18.0",
     "cors": "^2.8.5",
     "express": "^5.1.0",
     "express-validator": "^7.2.1",
-    "morgan": "^1.10.1"
+    "morgan": "^1.10.1",
+    "swagger-ui-express": "^5.0.1",
+    "yamljs": "^0.3.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
@@ -34,6 +36,6 @@
     "eslint-config-prettier": "^10.1.8",
     "globals": "^16.4.0",
     "prettier": "^3.6.2",
-    "prisma": "^6.16.2"
+    "prisma": "^6.18.0"
   }
 }
