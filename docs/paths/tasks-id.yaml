@@ -1,29 +1,30 @@
 get:
   summary: Get a single task by ID
-  description: Retrieve a specific task by its ID.
+  description: Retrieve a specific task using its unique identifier
   parameters:
     - name: id
       in: path
       required: true
-      description: The ID of the task to retrieve
+      description: Numeric ID of the task to retrieve
       schema:
         type: integer
+        example: 1
   responses:
-    "200":
-      description: Task found
+    '200':
+      description: Task found successfully
       content:
         application/json:
           schema:
-            $ref: "../components/schemas/Task.yaml"
-    "400":
+            $ref: '#/components/schemas/Task'
+    '400':
       description: Validation error
       content:
         application/json:
           schema:
-            $ref: "../components/schemas/ValidationError.yaml"
-    "404":
+            $ref: '#/components/schemas/ValidationError'
+    '404':
       description: Task not found
       content:
         application/json:
           schema:
-            $ref: "../components/schemas/NotFoundError.yaml"
+            $ref: '#/components/schemas/NotFoundError'

@@ -1,0 +1,53 @@
+schemas:
+  Task:
+    type: object
+    properties:
+      id:
+        type: integer
+        example: 1
+      title:
+        type: string
+        example: "Buy groceries"
+      completed:
+        type: boolean
+        example: false
+    required:
+      - id
+      - title
+      - completed
+
+  TaskInput:
+    type: object
+    properties:
+      title:
+        type: string
+        example: "Buy groceries"
+      completed:
+        type: boolean
+        example: false
+    required:
+      - title
+
+  ValidationError:
+    type: object
+    properties:
+      error:
+        type: string
+        example: "Validation failed"
+      details:
+        type: array
+        items:
+          type: string
+        example: ["ID must be a number"]
+    required:
+      - error
+      - details
+
+  NotFoundError:
+    type: object
+    properties:
+      error:
+        type: string
+        example: "Task not found"
+    required:
+      - error
